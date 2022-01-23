@@ -31,7 +31,6 @@ class Symulacja
     private static async Task generujPlikiDanych()
     {
         Random random = new Random();
-
         for (int i = 1; i < 101; i++)
         {
             using StreamWriter file = new(i+".txt", append: true);
@@ -39,7 +38,6 @@ class Symulacja
             {
                 await file.WriteLineAsync((random.Next(0,1001))+"\t"+(random.Next(1,20)));
             }
-
         }
     }
      */
@@ -48,7 +46,7 @@ class Symulacja
     {
         listaProcesow.Clear();
 
-        string nazwaPliku = "DANE\\" + x +".txt"; // domyślnie pliki w folderze DANE // 
+        string nazwaPliku = "DANE\\" + x + ".txt"; // domyślnie pliki w folderze DANE // 
         int id = -1;
         string[] plik = File.ReadAllLines(nazwaPliku);
 
@@ -86,7 +84,7 @@ class Symulacja
     private void FCFS(int x, bool z) // algorytm FCFS //
     {
         listaProcesow = listaProcesow.OrderBy(proces => proces.AT).ToList();
-        
+
         listaProcesow[0].WT = 0;
         int temp;
 
@@ -181,5 +179,7 @@ class Symulacja
         {
             symulacja.startSymulacji(i);
         }
+        Console.WriteLine("Wciśnij dowolny klawisz, by wyjść...");
+        Console.ReadLine();
     }
 }
