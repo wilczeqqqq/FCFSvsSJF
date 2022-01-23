@@ -8,12 +8,12 @@ namespace FCFSvsSJF
 {
     internal class Proces
     {
-        private int _ID;
-        private int _at;
-        private int _bt;
-        private int _wt;
-        private int _tat;
-        private int _ft;
+        private int _ID; // ID procesu
+        private int _at; // Arrival Time
+        private int _bt; // Burst Time
+        private int _wt; // Waiting Time
+        private int _tat; // Turnaround Time
+        private int _ft; // Finish Time
 
         public Proces(int ID, int at, int bt)
         {
